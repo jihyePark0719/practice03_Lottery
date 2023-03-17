@@ -134,7 +134,7 @@ contract LotteryTest is Test {
     }
 
     // Rollover 테스트
-    // 두 번 참여해서 둘 다 당첨되었을 때, 최종적으로 0.2 ether를 가지고 있어야 함.
+    // 두 번 참여해서 한번만 당첨되었을 때, 최종적으로 0.2 ether를 가지고 있어야 함.
     function testRollover() public {
         uint16 winningNumber = getNextWinningNumber();
         lottery.buy{value: 0.1 ether}(winningNumber + 1); vm.warp(block.timestamp + 24 hours);
